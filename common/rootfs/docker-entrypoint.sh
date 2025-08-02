@@ -59,8 +59,10 @@ else
     bashio::log.info "Socat not enabled"
 fi
 
+
 export ZIGBEE2MQTT_DATA="$(bashio::config 'data_path')"
 mkdir -p "$ZIGBEE2MQTT_DATA" || bashio::exit.nok "Could not create $ZIGBEE2MQTT_DATA"
+
 
 if bashio::config.has_value 'watchdog'; then
     export Z2M_WATCHDOG="$(bashio::config 'watchdog')"
